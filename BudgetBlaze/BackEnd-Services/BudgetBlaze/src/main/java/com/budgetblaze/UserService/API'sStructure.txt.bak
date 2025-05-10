@@ -1,0 +1,38 @@
+-- SignUp
+
+https://.postman.co/workspace/My-Workspace~acd1ce9d-e4ea-41a6-8117-05d02c563c53/request/44653872-6fc8b69c-c008-440c-8a1c-9b7734fcc982?action=share&creator=44653872&ctx=documentation
+
+url: http://localhost:8080/UserService/signUp
+
+body
+{
+	"userEmail":"abc@gmail",
+	"Password":"Test@1232",
+	
+}
+
+--genrate OTp
+
+https://.postman.co/workspace/My-Workspace~acd1ce9d-e4ea-41a6-8117-05d02c563c53/request/44653872-ecf993f4-d836-4a05-ade7-1eecf0b17a44?action=share&creator=44653872&ctx=documentation
+
+url: http://localhost:8080/UserService/requestOTP
+
+body:
+{
+    "functionType":"REG",
+    "userEmail":"abc@gmail.com"
+   
+}
+
+--validate OTp
+
+https://.postman.co/workspace/My-Workspace~acd1ce9d-e4ea-41a6-8117-05d02c563c53/request/44653872-572e57d4-621a-40e4-8418-589dc50b0723?action=share&creator=44653872&ctx=documentation
+
+url: http://localhost:8080/UserService/validateOTP
+
+body:
+{
+    "fucntionType":"REG",
+    "userEmail":"abc@gmail.com",
+    "otp":"260219"
+}
