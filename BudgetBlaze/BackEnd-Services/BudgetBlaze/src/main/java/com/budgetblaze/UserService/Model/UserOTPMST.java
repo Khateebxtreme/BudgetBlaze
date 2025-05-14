@@ -6,6 +6,8 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,9 +24,9 @@ public class UserOTPMST {
     @Column(name="Function")
     private String functionType;
 
-    @Column(name="Otp Generated")
+    @Column(name="Otp_Generated")
     private String otp;
-    @Column(name="User Email")
+    @Column(name="User_Email")
     private String email;
 
     @Column
@@ -37,11 +39,12 @@ public class UserOTPMST {
     @CreatedBy
     private String generatedBy;
 
-    @Temporal(value =TemporalType.TIMESTAMP)
+    @DateTimeFormat
     @CreatedDate
-    private String generatedDate;
+    private LocalDateTime generatedDate;
 
-    @Temporal(value = TemporalType.TIMESTAMP)
-    private String expiryDate;
+    @DateTimeFormat
+    @CreatedDate
+    private LocalDateTime expiryDate;
 
 }

@@ -44,7 +44,7 @@ const LandingPage = () => {
               <h1 className="font-semibold font-roboto text-slate-800 2xl:text-6xl md:text-4xl sm:text-2xl text-xl  md:leading-[45px] sm:leading-[35px] leading-10 w-full md:w-full lg:w-full">
                 Plan Ahead with Recurring Bills & Goals
               </h1>
-              <p className="block text-slate-500 2xl:text-2xl text-lg 2xl:mt-10 mt-2 mb-3 font-[400] font-lato">
+              <p className="block text-slate-500 2xl:text-3xl text-lg 2xl:mt-10 mt-2 mb-3 font-[400] font-lato">
                 Take control of your finances effortlessly by planning ahead
                 with recurring bills and savings goals. Our AI-powered budget
                 tracker helps you understand your spending habits and suggests
@@ -59,7 +59,7 @@ const LandingPage = () => {
             </motion.div>
           </div>
           <img
-            className="sm:w-[35%] w-[400px] object-cover rounded-lg"
+            className="sm:w-[40%] w-[400px] object-cover rounded-lg"
             src="/images/planning.jpg"
             alt="Super feature Logo"
           />

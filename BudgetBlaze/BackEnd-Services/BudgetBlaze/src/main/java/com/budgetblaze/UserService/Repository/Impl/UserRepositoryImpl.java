@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public abstract class UserRepositoryImpl implements UserRepository {
+public abstract class UserRepositoryImpl {
 
     @Autowired
     UserRepository userRepository;
@@ -18,7 +18,9 @@ public abstract class UserRepositoryImpl implements UserRepository {
         this.userRepository = userRepository;
     }
 
-    public User findUserByemail(String email){
+
+    public User findUserByemail(String email)
+    {
 
         List<User> users =userRepository.findAll();
         List<User> userwithEmail =new ArrayList<>();

@@ -7,7 +7,7 @@ import java.util.Random;
 @Component
 public class Compunctions {
 
-    //Gnerate Random Otp
+    //Generates Random OTP -> UseCase - User Registration Process
     public static char[] generateRandomNo (int len)
     {
 

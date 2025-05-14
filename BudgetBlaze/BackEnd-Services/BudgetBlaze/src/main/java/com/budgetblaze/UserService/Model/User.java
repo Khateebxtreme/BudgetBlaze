@@ -13,11 +13,12 @@ import lombok.*;
 @Entity(name="BudgetBlaze_Users")
 public class User extends BaseModel{
 
-    private String name;
+    private String username;
     private String email;
     private String contactDetails;
     private String password;
     private String isVerified;
+    private String userId;
 
 
     @OneToOne

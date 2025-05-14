@@ -16,7 +16,7 @@ public class BaseModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @DateTimeFormat
     @CreatedDate
@@ -29,11 +29,11 @@ public class BaseModel {
     private String createdBy;
     private String updatedBy;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -94,7 +94,7 @@ public class BaseModel {
     }
 
 
-    public BaseModel(int id, LocalDateTime createdAt, LocalDateTime updatedAt, String createdBy, String updatedBy) {
+    public BaseModel(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String createdBy, String updatedBy) {
         this.id = id;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -105,6 +105,5 @@ public class BaseModel {
     public BaseModel() {
         super();
     }
-
 
 }
