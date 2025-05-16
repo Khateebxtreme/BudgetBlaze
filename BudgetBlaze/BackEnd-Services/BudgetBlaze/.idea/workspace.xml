@@ -5,32 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec02d04-5f62-45ea-8fa3-e71e9093eb86" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UpdateCustomerProfileDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/BudgetBlazeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/BudgetBlazeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/GenerateOTPDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/GenerateOTPDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UserRegistrationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UserOTPMST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UserOTPMST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserOTPRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserOTPRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Utils/Compunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Utils/Compunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/BudgetBlazeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/BudgetBlazeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/UserOTPMST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/UserOTPMST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserOTPRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserOTPRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,24 +29,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 2
-}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2wyDfKXD84mYIdWC7M0ALR2yMOF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BudgetBlazeApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Projects/BudgetBlaze-main/BudgetBlaze/BackEnd-Services/BudgetBlaze&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.budgetblaze.UserService.Model" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="BudgetBlazeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.budgetblaze.UserService.BudgetBlazeApplication" />
@@ -95,5 +82,16 @@
       <updated>1747005021402</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

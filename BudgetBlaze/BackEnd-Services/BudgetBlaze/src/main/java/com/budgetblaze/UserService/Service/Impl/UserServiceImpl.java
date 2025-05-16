@@ -8,6 +8,7 @@ import com.budgetblaze.UserService.Exceptions.OtpNotGeneratedException;
 import com.budgetblaze.UserService.Exceptions.UserAlreadyExistsException;
 import com.budgetblaze.UserService.Exceptions.UserNotFoundException;
 import com.budgetblaze.UserService.Model.Address;
+import com.budgetblaze.UserService.Model.UpdateCustomerProfileDto;
 import com.budgetblaze.UserService.Model.User;
 import com.budgetblaze.UserService.Model.UserOTPMST;
 import com.budgetblaze.UserService.Repository.UserOTPRepository;
@@ -203,4 +204,30 @@ public class UserServiceImpl implements UserService {
     public boolean isUserNamePresent(String username) {
         return userRepository.findByUsername(username).isPresent();
     }
+
+    @Override
+    public Boolean updateProfile(UpdateCustomerProfileDto updateCustomerProfileDto, String userId) throws UserNotFoundException {
+        boolean isUpdated =false;User user =null;
+
+        user = userRepository.findUserByUserId(userId);
+        if(user!=null){
+            user.setUsername(updateCustomerProfileDto.getName());
+            user.setEmail(updateCustomerProfileDto.getEmail());
+            user.setContactDetails(updateCustomerProfileDto.getContactDetails());
+            user.setAddress(updateCustomerProfileDto.getAddress());
+
+            user =userRepository.save(user);
+            if(user !=null){
+                isUpdated=true;
+            }
+        }
+        else{
+            throw new UserNotFoundException("No Valid User Found");
+        }
+
+
+        return isUpdated;
+
+    }
+
 }
