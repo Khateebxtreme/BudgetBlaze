@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec02d04-5f62-45ea-8fa3-e71e9093eb86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UpdateCustomerProfileDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/API'sStructure.txt.bak" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/API'sStructure.txt.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UpdateCustomerProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UpdateCustomerProfileDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/UserService.java" afterDir="false" />
