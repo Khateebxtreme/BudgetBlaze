@@ -143,16 +143,13 @@ public class UserServiceImpl implements UserService {
 
         if(generateOTPDto.getEmail() !=null && !generateOTPDto.getEmail().isEmpty()){
             //checks if the email coming from the request has generated an OTP into the system or not.
-            List<UserOTPMST> users =userOTPRepository.findOtpValidateByEmail(generateOTPDto.getEmail(), Sort.by("email"));
+            List<UserOTPMST> users =userOTPRepository.findOtpValidateByEmail(generateOTPDto.getEmail(), Sort.by("generated_date"));
+            UserOTPMST userOtp =users.get(0);
 
-            //List<UserOTPMST> users =userOTPRepository.findAll();
-            for(UserOTPMST userOTPMST: users){
-                if (userOTPMST != null) {
-                    if(userOTPMST.getOtp().equals(generateOTPDto.getOtp())) {
+                if (userOtp != null) {
+                    if(userOtp.getOtp().equals(generateOTPDto.getOtp())) {
                         //situation to deal with upon successful matching of OTP
-
                         User user = null;
-
                         user = userRepository.findUserByemail(generateOTPDto.getEmail()); //fetches user from the system.
                         if (user != null) {
                             user.setIsVerified("true"); //updating user's verification status
@@ -163,12 +160,11 @@ public class UserServiceImpl implements UserService {
                         }
 
                     }
-                else{
-                    //situation for when there is a mismatch in OTP
-                    throw new InvalidOTPException("The Otp is invalid");
+                    else{
+                        //situation for when there is a mismatch in OTP
+                        throw new InvalidOTPException("The Otp is invalid");
+                    }
                 }
-                }
-            }
 
         }
         else{
