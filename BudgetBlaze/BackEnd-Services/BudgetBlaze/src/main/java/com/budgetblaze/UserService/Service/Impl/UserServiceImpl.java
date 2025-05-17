@@ -7,8 +7,7 @@ import com.budgetblaze.UserService.Exceptions.InvalidOTPException;
 import com.budgetblaze.UserService.Exceptions.OtpNotGeneratedException;
 import com.budgetblaze.UserService.Exceptions.UserAlreadyExistsException;
 import com.budgetblaze.UserService.Exceptions.UserNotFoundException;
-import com.budgetblaze.UserService.Model.Address;
-import com.budgetblaze.UserService.Model.UpdateCustomerProfileDto;
+import com.budgetblaze.UserService.Dto.UpdateCustomerProfileDto;
 import com.budgetblaze.UserService.Model.User;
 import com.budgetblaze.UserService.Model.UserOTPMST;
 import com.budgetblaze.UserService.Repository.UserOTPRepository;
@@ -62,7 +61,7 @@ public class UserServiceImpl implements UserService {
     //Service class methods to Register and verify the user into the system.
 
     @Override
-    public UserRegistrationDto registerUser(UserRegistrationDto userRegistrationDto) throws UserAlreadyExistsException {
+    public UserRegistrationDto registerUser(UserRegistrationDto userRegistrationDto) throws UserAlreadyExistsException, UserNotFoundException {
         //Service class method to register a user into the system.
 
         User user=null; //default state for user object.
@@ -227,6 +226,20 @@ public class UserServiceImpl implements UserService {
 
 
         return isUpdated;
+
+    }
+
+    @Override
+    public User fetchProfile(String userId) throws UserNotFoundException{
+        User user=null;
+        try{
+            user = userRepository.findUserByUserId(userId);
+        }
+        catch (UserNotFoundException u){
+            throw new UserNotFoundException("No Valid User Found");
+        }
+
+        return user;
 
     }
 

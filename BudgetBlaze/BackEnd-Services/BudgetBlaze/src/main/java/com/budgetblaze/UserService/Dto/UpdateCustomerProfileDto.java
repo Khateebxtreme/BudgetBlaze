@@ -1,5 +1,6 @@
-package com.budgetblaze.UserService.Model;
+package com.budgetblaze.UserService.Dto;
 
+import com.budgetblaze.UserService.Model.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
