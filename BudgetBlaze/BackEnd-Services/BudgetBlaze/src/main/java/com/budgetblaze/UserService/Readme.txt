@@ -42,6 +42,25 @@
     -else,
         - Save the details and return state.
 
+// Customer Profile
+//Get Details
+    - Validate the UserId
+    - Validate the UserId present in Db.
+    - If yes,
+        - Return the user Details
+    - else,
+        - Throws User Not Found Exception.
+    
+// update Details
+    - Validate the UserId and customerProfileUpdateDto
+    - Validate the UserId present in Db.
+    - If yes,
+        - Update the Details
+        - Return the user Details update status
+    - else,
+        - Throw User Not Found Exception.
+    
+
 
 
 

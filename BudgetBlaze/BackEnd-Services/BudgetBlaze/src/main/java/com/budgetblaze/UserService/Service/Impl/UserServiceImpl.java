@@ -7,7 +7,7 @@ import com.budgetblaze.UserService.Exceptions.InvalidOTPException;
 import com.budgetblaze.UserService.Exceptions.OtpNotGeneratedException;
 import com.budgetblaze.UserService.Exceptions.UserAlreadyExistsException;
 import com.budgetblaze.UserService.Exceptions.UserNotFoundException;
-import com.budgetblaze.UserService.Model.Address;
+import com.budgetblaze.UserService.Dto.UpdateCustomerProfileDto;
 import com.budgetblaze.UserService.Model.User;
 import com.budgetblaze.UserService.Model.UserOTPMST;
 import com.budgetblaze.UserService.Repository.UserOTPRepository;
@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
     //Service class methods to Register and verify the user into the system.
 
     @Override
-    public UserRegistrationDto registerUser(UserRegistrationDto userRegistrationDto) throws UserAlreadyExistsException {
+    public UserRegistrationDto registerUser(UserRegistrationDto userRegistrationDto) throws UserAlreadyExistsException, UserNotFoundException {
         //Service class method to register a user into the system.
 
         User user=null; //default state for user object.
@@ -143,16 +143,13 @@ public class UserServiceImpl implements UserService {
 
         if(generateOTPDto.getEmail() !=null && !generateOTPDto.getEmail().isEmpty()){
             //checks if the email coming from the request has generated an OTP into the system or not.
-            List<UserOTPMST> users =userOTPRepository.findOtpValidateByEmail(generateOTPDto.getEmail(), Sort.by("email"));
+            List<UserOTPMST> users =userOTPRepository.findOtpValidateByEmail(generateOTPDto.getEmail(), Sort.by("generated_date"));
+            UserOTPMST userOtp =users.get(0);
 
-            //List<UserOTPMST> users =userOTPRepository.findAll();
-            for(UserOTPMST userOTPMST: users){
-                if (userOTPMST != null) {
-                    if(userOTPMST.getOtp().equals(generateOTPDto.getOtp())) {
+                if (userOtp != null) {
+                    if(userOtp.getOtp().equals(generateOTPDto.getOtp())) {
                         //situation to deal with upon successful matching of OTP
-
                         User user = null;
-
                         user = userRepository.findUserByemail(generateOTPDto.getEmail()); //fetches user from the system.
                         if (user != null) {
                             user.setIsVerified("true"); //updating user's verification status
@@ -163,12 +160,11 @@ public class UserServiceImpl implements UserService {
                         }
 
                     }
-                else{
-                    //situation for when there is a mismatch in OTP
-                    throw new InvalidOTPException("The Otp is invalid");
+                    else{
+                        //situation for when there is a mismatch in OTP
+                        throw new InvalidOTPException("The Otp is invalid");
+                    }
                 }
-                }
-            }
 
         }
         else{
@@ -203,4 +199,44 @@ public class UserServiceImpl implements UserService {
     public boolean isUserNamePresent(String username) {
         return userRepository.findByUsername(username).isPresent();
     }
+
+    @Override
+    public Boolean updateProfile(UpdateCustomerProfileDto updateCustomerProfileDto, String userId) throws UserNotFoundException {
+        boolean isUpdated =false;User user =null;
+
+        user = userRepository.findUserByUserId(userId);
+        if(user!=null){
+            user.setUsername(updateCustomerProfileDto.getName());
+            user.setEmail(updateCustomerProfileDto.getEmail());
+            user.setContactDetails(updateCustomerProfileDto.getContactDetails());
+            user.setAddress(updateCustomerProfileDto.getAddress());
+
+            user =userRepository.save(user);
+            if(user !=null){
+                isUpdated=true;
+            }
+        }
+        else{
+            throw new UserNotFoundException("No Valid User Found");
+        }
+
+
+        return isUpdated;
+
+    }
+
+    @Override
+    public User fetchProfile(String userId) throws UserNotFoundException{
+        User user=null;
+        try{
+            user = userRepository.findUserByUserId(userId);
+        }
+        catch (UserNotFoundException u){
+            throw new UserNotFoundException("No Valid User Found");
+        }
+
+        return user;
+
+    }
+
 }

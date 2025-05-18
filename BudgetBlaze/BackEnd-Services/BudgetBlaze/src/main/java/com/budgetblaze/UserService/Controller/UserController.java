@@ -7,16 +7,15 @@ import com.budgetblaze.UserService.Exceptions.InvalidOTPException;
 import com.budgetblaze.UserService.Exceptions.OtpNotGeneratedException;
 import com.budgetblaze.UserService.Exceptions.UserAlreadyExistsException;
 import com.budgetblaze.UserService.Exceptions.UserNotFoundException;
+import com.budgetblaze.UserService.Dto.UpdateCustomerProfileDto;
+import com.budgetblaze.UserService.Model.User;
 import com.budgetblaze.UserService.Security.JWT.JwtAuthenticationResponse;
 import com.budgetblaze.UserService.Service.EmailSenderService;
 import com.budgetblaze.UserService.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -55,7 +54,7 @@ public class UserController {
             //We try to register the user when appropriate data is coming from the front-end.
             userRegDto = userService.registerUser(userRegDto);
 
-        } catch (UserAlreadyExistsException e) {
+        } catch (UserAlreadyExistsException | UserNotFoundException e) {
             //Checks if the register request is for new users or not, if there is a duplicate user or if the user is already available in the system, this exception is thrown.
             e.printStackTrace();
             userRegistrationRespMap.put("Status","FAIL");
@@ -177,5 +176,69 @@ public class UserController {
         //To authenticate our users, we will make use of a service class UserService's method - authenticate user
         //once the token is returned, users can use the provided token for subsequent requests or accessing authenticated apis.
         return ResponseEntity.ok(userService.authenticateUser(loginRequest));
+    }
+
+    // Customer Profile
+
+
+    @GetMapping("/getProfile/{userId}")
+    ResponseEntity<Map<String,Object>> getCustomerProfile(@PathVariable ("userId") String userId) throws UserNotFoundException {
+
+        Map<String,Object> customerProfileResponseMap =new HashMap<>();
+        if(userId == null && userId.equals("")){
+
+            customerProfileResponseMap.put("status","false");
+            customerProfileResponseMap.put("message","No Inputs Found");
+            return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.BAD_REQUEST);
+        }
+
+        User userDetails = userService.fetchProfile(userId);
+
+        if(userDetails !=null){
+            customerProfileResponseMap.put("status","true");
+            customerProfileResponseMap.put("message","Successfully Details Fetched");
+            customerProfileResponseMap.put("User",userDetails);
+            return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.OK);
+
+        }
+        else{
+            customerProfileResponseMap.put("status","false");
+            customerProfileResponseMap.put("message","Some Exception occurred Fetching User Details");
+            return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.INTERNAL_SERVER_ERROR);
+
+        }
+
+    }
+
+
+
+
+    @PostMapping("/updateProfile/{userId}")
+    ResponseEntity<Map<String,Object>> updateCustomerProfile(@PathVariable("userId") String userId, @RequestBody UpdateCustomerProfileDto updateCustomerProfileDto) throws UserNotFoundException {
+
+        Map<String,Object> customerProfileResponseMap =new HashMap<>();
+        if(updateCustomerProfileDto == null && updateCustomerProfileDto.equals("")){
+
+            customerProfileResponseMap.put("status","false");
+            customerProfileResponseMap.put("message","No Inputs Found");
+            return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.BAD_REQUEST);
+        }
+
+        boolean isUpdated =userService.updateProfile(updateCustomerProfileDto,userId);
+
+
+        if(isUpdated){
+            customerProfileResponseMap.put("status","true");
+            customerProfileResponseMap.put("message","Successfully Details Updated");
+            return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.OK);
+
+        }
+        else{
+            customerProfileResponseMap.put("status","false");
+            customerProfileResponseMap.put("message","Some Exception occurred Updating User Details");
+            return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.INTERNAL_SERVER_ERROR);
+
+        }
+
     }
 }
