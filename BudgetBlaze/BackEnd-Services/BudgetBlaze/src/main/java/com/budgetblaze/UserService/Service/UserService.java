@@ -18,7 +18,7 @@ public interface UserService {
     public UserRegistrationDto registerUser(UserRegistrationDto userRegistrationDto) throws UserAlreadyExistsException, UserNotFoundException;
     public String generateOTP(GenerateOTPDto generateOTPDto) throws OtpNotGeneratedException, UserNotFoundException;
     public String validateOtp(GenerateOTPDto generateOTPDto) throws InvalidOTPException, UserNotFoundException;
-    public Boolean updateProfile(UpdateCustomerProfileDto updateCustomerProfileDto, String userId) throws UserNotFoundException;
+    public User updateProfile(UpdateCustomerProfileDto updateCustomerProfileDto, String userId) throws UserNotFoundException;
     public User fetchProfile(String userId) throws UserNotFoundException;
     public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest);
 }

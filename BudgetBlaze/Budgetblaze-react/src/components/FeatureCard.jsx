@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 const FeatureCard = ({ title, desc, imageUrl }) => {
+  //cards used to display application features on Landing page.
   return (
 <div className="max-w-xl rounded-xl overflow-hidden shadow-lg bg-white border border-gray-300 hover:shadow-3xl lg:transition lg:duration-300 lg:ease-in-out lg:transform lg:hover:scale-105 py-4">
   <img className="w-full max-h-[500px] xl:h-[400px] 2xl:h-[500px] object-contain" src={imageUrl} alt="Card Image"/>

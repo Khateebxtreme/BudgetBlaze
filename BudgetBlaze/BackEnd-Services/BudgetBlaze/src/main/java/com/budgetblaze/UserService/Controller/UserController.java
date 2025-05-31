@@ -178,21 +178,19 @@ public class UserController {
         return ResponseEntity.ok(userService.authenticateUser(loginRequest));
     }
 
-    // Customer Profile
-
-
-    @GetMapping("/getProfile/{userId}")
-    ResponseEntity<Map<String,Object>> getCustomerProfile(@PathVariable ("userId") String userId) throws UserNotFoundException {
+    // User Profile -> endpoints
+    @GetMapping("/profile/{username}")
+    ResponseEntity<Map<String,Object>> getCustomerProfile(@PathVariable ("username") String username) throws UserNotFoundException {
 
         Map<String,Object> customerProfileResponseMap =new HashMap<>();
-        if(userId == null && userId.equals("")){
+        if(username == null && username.equals("")){
 
             customerProfileResponseMap.put("status","false");
             customerProfileResponseMap.put("message","No Inputs Found");
             return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.BAD_REQUEST);
         }
 
-        User userDetails = userService.fetchProfile(userId);
+        User userDetails = userService.fetchProfile(username);
 
         if(userDetails !=null){
             customerProfileResponseMap.put("status","true");
@@ -205,16 +203,11 @@ public class UserController {
             customerProfileResponseMap.put("status","false");
             customerProfileResponseMap.put("message","Some Exception occurred Fetching User Details");
             return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.INTERNAL_SERVER_ERROR);
-
         }
 
     }
-
-
-
-
-    @PostMapping("/updateProfile/{userId}")
-    ResponseEntity<Map<String,Object>> updateCustomerProfile(@PathVariable("userId") String userId, @RequestBody UpdateCustomerProfileDto updateCustomerProfileDto) throws UserNotFoundException {
+    @PostMapping("/updateProfile/{username}")
+    ResponseEntity<Map<String,Object>> updateCustomerProfile(@PathVariable("username") String username, @RequestBody UpdateCustomerProfileDto updateCustomerProfileDto) throws UserNotFoundException {
 
         Map<String,Object> customerProfileResponseMap =new HashMap<>();
         if(updateCustomerProfileDto == null && updateCustomerProfileDto.equals("")){
@@ -223,13 +216,12 @@ public class UserController {
             customerProfileResponseMap.put("message","No Inputs Found");
             return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.BAD_REQUEST);
         }
+        User user =userService.updateProfile(updateCustomerProfileDto,username);
 
-        boolean isUpdated =userService.updateProfile(updateCustomerProfileDto,userId);
-
-
-        if(isUpdated){
+        if(user!=null){
             customerProfileResponseMap.put("status","true");
             customerProfileResponseMap.put("message","Successfully Details Updated");
+            customerProfileResponseMap.put("user",user);
             return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.OK);
 
         }
@@ -237,7 +229,6 @@ public class UserController {
             customerProfileResponseMap.put("status","false");
             customerProfileResponseMap.put("message","Some Exception occurred Updating User Details");
             return new ResponseEntity<Map<String,Object>>(customerProfileResponseMap,HttpStatus.INTERNAL_SERVER_ERROR);
-
         }
 
     }

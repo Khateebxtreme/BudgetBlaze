@@ -35,7 +35,8 @@ const LoginPage = () => {
       //storing the bearer token in local storage for the authenticated user
       console.log(response.token);
       setToken(response.token); // setting the token at context level
-      localStorage.setItem("JWT_TOKEN", JSON.stringify(response.token));
+      localStorage.setItem("JWT_TOKEN", JSON.stringify(response.token)); //setting JWT token in local storage
+      localStorage.setItem("USER", data.username); //making the username global, which may be required for some feature.
       toast.success("User has been successfully logged in");
       reset();
       navigate("/");

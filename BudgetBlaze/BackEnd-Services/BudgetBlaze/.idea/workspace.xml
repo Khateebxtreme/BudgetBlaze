@@ -5,32 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec02d04-5f62-45ea-8fa3-e71e9093eb86" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/BudgetBlazeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/BudgetBlazeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/GenerateOTPDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/GenerateOTPDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UserRegistrationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UpdateCustomerProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Dto/UpdateCustomerProfileDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UserOTPMST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Model/UserOTPMST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserOTPRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserOTPRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Utils/Compunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budgetblaze/UserService/Utils/Compunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/BudgetBlazeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/BudgetBlazeApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/UserOTPMST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Model/UserOTPMST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/Impl/UserRepositoryImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserOTPRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserOTPRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Security/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budgetblaze/UserService/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/FeatureCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/FeatureCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/LandingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/LandingPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/RegisterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/RegisterPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/Register_Page_Components/Form_Stepper.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/components/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/src/contextApi/ContextAPI.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/src/contextApi/ContextAPI.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Budgetblaze-react/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Budgetblaze-react/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -45,17 +45,22 @@ const LandingPage = () => {
                 Plan Ahead with Recurring Bills & Goals
               </h1>
               <p className="block text-slate-500 2xl:text-3xl text-lg 2xl:mt-10 mt-2 mb-3 font-[400] font-lato">
-                Take control of your finances effortlessly by planning ahead
-                with recurring bills and savings goals. Our AI-powered budget
-                tracker helps you understand your spending habits and suggests
-                smarter ways to allocate your budget based on your unique
-                financial behavior. Easily schedule regular expenses and set
-                savings targets, while the app automatically tracks your
-                progress and ensures you're prepared for what's coming. With
-                clear insights and guidance powered by AI, you can make informed
-                decisions, build better budgeting habits, and stay on track
-                toward long-term financial success—without the guesswork.
+                Take the stress out of managing money. With our smart budget
+                tracker, you can easily set up recurring bills, create savings
+                goals, and let the app do the rest. It learns your spending
+                habits and gives you tips to use your money smarter. You'll get
+                helpful insights, automatic tracking, and a clear view of where
+                your money's going—so you can plan ahead and stay on top of your
+                finances without the hassle.
               </p>
+              <ul className="block text-slate-500 2xl:text-3xl text-lg 2xl:mt-10 mt-2 mb-3 font-[400] font-lato list-disc ml-12 space-y-2">
+                <li>📅 Auto-schedule your regular bills and expenses</li>
+                <li>🎯 Set and track custom savings goals</li>
+                <li> 💡 Smart suggestions based
+                on your spending habits</li>  <li>🔔 Stay
+                prepared with helpful reminders</li>
+                <li>📈 Real-time progress tracking</li>
+              </ul>
             </motion.div>
           </div>
           <img

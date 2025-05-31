@@ -12,9 +12,6 @@ import java.util.List;
 public interface UserOTPRepository extends JpaRepository<UserOTPMST, Integer> {
 
     @Query("select o from User_OTP_MST o where o.email=?1")
-    List<UserOTPMST> findOtpValidateByEmail(String email, Sort sort);
-    @Query("select o from User_OTP_MST o where o.contact=?1")
-    List<UserOTPMST> findOtpValidateByPhoneNum(String phoneNum,Sort sort);
-
+    List<UserOTPMST> findOtpValidateByEmail(String email);
 
 }

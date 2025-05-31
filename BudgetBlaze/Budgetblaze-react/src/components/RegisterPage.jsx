@@ -1,4 +1,4 @@
-import Form_Stepper from "./Register_Page_Components/Form_Stepper";
+import Form_Stepper from "./SubComponents/Form_Stepper";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "./TextField";
@@ -36,6 +36,7 @@ const RegisterPage = () => {
   });
 
   const formatTime = (seconds) => {
+    //handles format of time (displayed on Generate OTP button once the request is fired.)
     const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
     const secs = String(seconds % 60).padStart(2, "0");
     return `${mins}:${secs}`;
@@ -155,6 +156,7 @@ const RegisterPage = () => {
           onSubmit={handleSubmit(handleRegister)}
           className="sm:w-[600px] w-[360px] 2xl:w-[800px]  shadow-custom pt-5 pb-4 sm:px-8 px-4 rounded-md"
         >
+          {/* Step 1 -> Registering a User based on their email and set password. */}
           {currentStep === 0 ? (
             <>
               <h2 className="text-center font-serif text-log_reg_headerColor font-medium lg:text-4xl text-3xl">
@@ -205,6 +207,7 @@ const RegisterPage = () => {
             </>
           ) : (
             <>
+              {/* Step 2 -> Once the user is logged in, We can generate and verify OTP at this step. */}
               {currentStep === 1 && (
                 <>
                   <h2 className="text-center font-serif font-medium lg:text-4xl text-3xl">
@@ -242,9 +245,10 @@ const RegisterPage = () => {
                       </label>
                     </div>
                   </div>
+                  {/* Generate and Verify OTP buttons */}
                   <button
                     disabled={loader || isDisabled}
-                    className="bg-customRed font-semibold text-[#363535]  bg-otp-gradient w-full mx-1 py-2 transition-colors duration-100 rounded-md my-3"
+                    className="bg-customRed font-semibold text-[#363535]  bg-otp-button-gradient w-full mx-1 py-2 transition-colors duration-100 rounded-md my-3"
                     onClick={handleOTP}
                   >
                     {isDisabled ? `Wait - ${formatTime(timer)}` : "Generate OTP"}
@@ -270,6 +274,7 @@ const RegisterPage = () => {
               )}
             </>
           )}
+          {/* Step 3 -> Once the OTP is verified, we provide the user with his username for login */}
           {currentStep === 2 && (
             <div className="flex items-center justify-center flex-col">
               <h3 className="text-center font-serif text-log_reg_headerColor font-medium lg:text-2xl text-xl">

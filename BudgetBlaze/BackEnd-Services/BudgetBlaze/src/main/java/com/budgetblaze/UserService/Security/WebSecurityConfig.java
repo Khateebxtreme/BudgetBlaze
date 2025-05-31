@@ -65,6 +65,7 @@ public class WebSecurityConfig {
                 csrf(AbstractHttpConfigurer::disable).
                 authorizeHttpRequests(auth ->
                 auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/profile/**").authenticated()
                         .anyRequest().permitAll()
         ); //currently all requests are permitted
         //Some Extra configs before returning the Security filter chain object.

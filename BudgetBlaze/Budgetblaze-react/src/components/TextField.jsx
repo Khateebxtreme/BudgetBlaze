@@ -29,7 +29,7 @@ const TextField = ({
         placeholder={placeholder}
         className={`${
           className ? className : ""
-        } px-2 py-2 border   outline-none bg-transparent  text-slate-700 rounded-md ${
+        } px-2 py-2 border outline-none bg-transparent  text-slate-700 rounded-md ${
           errors[id]?.message ? "border-red-500" : "border-slate-600"
         }`}
         {...register(id, {
@@ -55,7 +55,11 @@ const TextField = ({
                 value:
                 /^(?:\+91[\-\s]?|91[\-\s]?|0)?[6-9]\d{4}[\-\s]?\d{5}$/, 
                 message: "Please enter a valid Phone Number (+91)",
-              } : null,
+              }:
+              type === "fullname"? {
+                value: /^[A-Za-z]+(?: [A-Za-z]+){1,4}$/, message : "Please Enter a valid name"
+              }
+               : null,
         })}
       />
 
