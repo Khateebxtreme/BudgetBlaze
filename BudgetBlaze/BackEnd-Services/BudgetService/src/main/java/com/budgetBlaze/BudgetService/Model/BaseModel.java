@@ -1,16 +1,30 @@
-package com.budgetBlaze.BudgetService.Model;
+package com.budgetblaze.BudgetService.Model;
+
+import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.Objects;
 
+
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class BaseModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
+
+
     private String createdBy;
     private String updatedBy;
+    @DateTimeFormat
+    @CreatedDate
     private Date createdAt;
+    @DateTimeFormat
     private Date updatedAt;
-
 
     public int getId() {
         return id;
@@ -18,14 +32,6 @@ public class BaseModel {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCreatedBy() {
@@ -62,10 +68,23 @@ public class BaseModel {
 
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseModel baseModel = (BaseModel) o;
+        return id == baseModel.id && Objects.equals(createdBy, baseModel.createdBy) && Objects.equals(updatedBy, baseModel.updatedBy) && Objects.equals(createdAt, baseModel.createdAt) && Objects.equals(updatedAt, baseModel.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, createdBy, updatedBy, createdAt, updatedAt);
+    }
+
+
+    @Override
     public String toString() {
         return "BaseModel{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", createdBy='" + createdBy + '\'' +
                 ", updatedBy='" + updatedBy + '\'' +
                 ", createdAt=" + createdAt +
@@ -73,13 +92,15 @@ public class BaseModel {
                 '}';
     }
 
-
-    public BaseModel(int id, String name, String createdBy, String updatedBy, Date createdAt, Date updatedAt) {
+    public BaseModel(int id, String createdBy, String updatedBy, Date createdAt, Date updatedAt) {
         this.id = id;
-        this.name = name;
         this.createdBy = createdBy;
         this.updatedBy = updatedBy;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public BaseModel() {
+        super();
     }
 }

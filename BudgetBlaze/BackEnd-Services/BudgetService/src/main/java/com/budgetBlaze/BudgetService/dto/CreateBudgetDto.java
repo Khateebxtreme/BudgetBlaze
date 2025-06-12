@@ -1,24 +1,24 @@
-package com.budgetblaze.BudgetService.Model;
+package com.budgetblaze.BudgetService.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-
-
-import java.util.Date;
 import java.util.Objects;
 
-@Entity(name="Budget_Allocated")
 
-public class Budget extends BaseModel {
+public class CreateBudgetDto {
 
+    private int budget_id;
     private int user_id;
     private int category_id;
     private float budgetAmount;
-    private float budgetExhausted;
-    @Enumerated(EnumType.STRING)
-    private C_urrency currency;
     private String month;
+
+
+    public int getBudget_id() {
+        return budget_id;
+    }
+
+    public void setBudget_id(int budget_id) {
+        this.budget_id = budget_id;
+    }
 
     public int getUser_id() {
         return user_id;
@@ -44,14 +44,6 @@ public class Budget extends BaseModel {
         this.budgetAmount = budgetAmount;
     }
 
-    public C_urrency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(C_urrency currency) {
-        this.currency = currency;
-    }
-
     public String getMonth() {
         return month;
     }
@@ -65,40 +57,39 @@ public class Budget extends BaseModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Budget budget = (Budget) o;
-        return user_id == budget.user_id && category_id == budget.category_id && Float.compare(budget.budgetAmount, budgetAmount) == 0 && currency == budget.currency && Objects.equals(month, budget.month);
+        CreateBudgetDto that = (CreateBudgetDto) o;
+        return budget_id == that.budget_id && user_id == that.user_id && category_id == that.category_id && Float.compare(that.budgetAmount, budgetAmount) == 0 && Objects.equals(month, that.month);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), user_id, category_id, budgetAmount, currency, month);
+        return Objects.hash(budget_id, user_id, category_id, budgetAmount, month);
     }
 
 
     @Override
     public String toString() {
-        return "Budget{" +
-                "user_id=" + user_id +
+        return "CreateBudgetDto{" +
+                "budget_id=" + budget_id +
+                ", user_id=" + user_id +
                 ", category_id=" + category_id +
                 ", budgetAmount=" + budgetAmount +
-                ", currency=" + currency +
                 ", month='" + month + '\'' +
                 '}';
     }
 
 
-
-    public Budget(int user_id, int category_id, float budgetAmount, C_urrency currency, String month) {
+    public CreateBudgetDto(int budget_id, int user_id, int category_id, float budgetAmount, String month) {
+        this.budget_id = budget_id;
         this.user_id = user_id;
         this.category_id = category_id;
         this.budgetAmount = budgetAmount;
-        this.currency = currency;
         this.month = month;
     }
 
-
-    public Budget() {
+    public CreateBudgetDto() {
         super();
     }
+
+
 }

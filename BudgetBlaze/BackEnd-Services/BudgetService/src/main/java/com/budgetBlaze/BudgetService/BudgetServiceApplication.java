@@ -1,4 +1,4 @@
-package com.budgetBlaze.BudgetService;
+package com.budgetblaze.BudgetService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

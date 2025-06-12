@@ -1,4 +1,4 @@
-package com.budgetBlaze.BudgetService;
+package com.budgetblaze.BudgetService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
